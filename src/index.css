@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.cdnfonts.com/css/fredoka");
+@import url("https://fonts.cdnfonts.com/css/super-onigiri");
+
+@layer components {
+    .hora {
+        @apply p-4 font-fredoka font-bold bg-gradient-to-r from-lime-500 to-green-700 rounded-md;
+    }
+
+    .dia {
+        @apply p-4 min-w-32 w-full text-sm font-onigiri bg-green-500 rounded-md;
+    }
+
+    .celda {
+        @apply w-full h-full bg-gray-300 rounded-md transition-all hover:bg-gray-400;
+    }
+
+    .hoy {
+        @apply transition-all hover:scale-105 md:w-[30%] lg:h-[10em] lg:w-[30%];
+    }
+}
+
+tr {
+    background: #8884;
+    border-radius: 0.5rem;
+    display: inline-flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 9em;
+    overflow: hidden;
+    padding: 0.7em;
+    position: relative;
+    width: calc(40% - 1rem);
+}
+
+tr > td:nth-child(1) {
+    font-family: "Super Onigiri", "serif";
+    font-weight: 00;
+}
+
+tbody > tr {
+    --color: #000;
+    --p: 66%;
+    background-image: linear-gradient(45deg, var(--color), #0000), var(--img);
+    background-position: 50%;
+    background-size: cover;
+    box-shadow: 0px 8px 16px -8px #000a;
+    color: #fff;
+}
+tbody > tr:nth-child(1) {
+    --img: url(./Resources/Anime1.jpeg);
+    background-position: 100% 100%;
+}
+
+tbody > tr:nth-child(2) {
+    --img: url(./Resources/Hearthstone.jpeg);
+    background-position: 100% 100%;
+}
+tbody > tr:nth-child(3) {
+    --img: url(./Resources/Hots1.jpg);
+}
+tbody > tr:nth-child(4) {
+    --img: url(./Resources/Webada.gif);
+    background-position: bottom;
+}
+tbody > tr:nth-child(5) {
+    --img: url(./Resources/Webada.gif);
+    background-position: center 70%;
+    background-size: cover;
+}
+tbody > tr:nth-child(6) {
+    --img: url(./Resources/Hots1.jpg);
+}
+tbody > tr:nth-child(7) {
+    --img: url(./Resources/Anime1.jpeg);
+    background-position: center 70%;
+    background-size: cover;
+}
