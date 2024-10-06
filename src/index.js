@@ -70,9 +70,17 @@ function ProgramarEvento(celda, objeto) {
     }
 
     if (bandera) {
+        let Tipo = objeto.Tipo;
+        let Recursos = obtenerRecrusos(Tipo);
         // Expandir la primera celda para cubrir el rango
-        celda.classList.add("bg-slate-500", "SELECTED");
-        celda.classList.add(`row-span-${duracionFinal}`);
+        celda.classList.add("bg-cover", "SELECTED");
+        celda.style.backgroundImage = `url('${Recursos.Fondo}')`;
+        celda.style.gridRow = `span ${duracionFinal}`;
+
+        let imagenSuper = document.createElement("img");
+        imagenSuper.src = Recursos.Logo;
+        imagenSuper.classList.add("imgSuper");
+        celda.append(imagenSuper);
 
         // Eliminar las celdas que se "cubrieron" con la expansión
         for (let i = 1; i < duracionFinal; i++) {
@@ -81,4 +89,35 @@ function ProgramarEvento(celda, objeto) {
     } else {
         console.log("Algunas de las celdas están ocupadas.");
     }
+}
+
+function obtenerRecrusos(Tipo) {
+    let Recursos = {
+        Fondo: "",
+        Logo: "",
+        Video: "",
+    };
+
+    switch (Tipo) {
+        case "HOTS":
+            Recursos.Fondo = "./Resources/HotsBG.jpg";
+            Recursos.Logo = "./Resources/HotsLogo.png";
+            Recursos.Video = "hots_video.mp4";
+            break;
+        case "IRL":
+            Recursos.Fondo = "./Resources/IRLBG.jpg";
+            Recursos.Logo = "./Resources/IRLLogo.png";
+            Recursos.Video = "irl_video.mp4";
+            break;
+        case "Anime":
+            Recursos.Fondo = "./Resources/AnimeBG.png";
+            Recursos.Logo = "./Resources/AnimeLogo.png";
+            Recursos.Video = "anime_video.mp4";
+            break;
+        default:
+            console.log("Tipo de evento no válido.");
+            break;
+    }
+
+    return Recursos;
 }
