@@ -10,7 +10,6 @@ let offsetX = 0,
 
 celdas.forEach((celda) => {
     celda.addEventListener("click", (e) => {
-        //ProgramarEvento(celda);
         ActivarForma(celda);
     });
 });
@@ -54,45 +53,32 @@ function ProgramarEvento(celda, objeto) {
     let CeldasSeleccionadas = celda.parentNode.children;
     let indiceCelda = Array.from(CeldasSeleccionadas).indexOf(celda);
     let bandera = true;
-    let Ultimo = false;
-    Duracion = objeto.Duracion;
-    console.log(Duracion);
+    Duracion = parseInt(objeto.Duracion);
 
-    if (CeldasSeleccionadas[indiceCelda + Duracion] === undefined) {
-        if (CeldasSeleccionadas[indiceCelda + 1] === undefined) {
-            console.log("ES LA ULTIMA CELDA");
-            Ultimo = true;
+    // Calcular cuántas celdas hay disponibles
+    let celdasDisponibles = CeldasSeleccionadas.length - indiceCelda;
+    let duracionFinal = Math.min(Duracion, celdasDisponibles);
+
+    // Revisar si las celdas en el rango están ocupadas
+    for (let i = 0; i < duracionFinal; i++) {
+        if (
+            CeldasSeleccionadas[indiceCelda + i].classList.contains("SELECTED")
+        ) {
+            bandera = false; // Si alguna está ocupada, no se puede seleccionar
+            break;
         }
+    }
 
-        if (!Ultimo) {
-            for (let i = 1; i < Duracion; i++) {
-                if (
-                    CeldasSeleccionadas[indiceCelda + i].classList.contains(
-                        "SELECTED"
-                    ) ||
-                    CeldasSeleccionadas[indiceCelda].classList.contains(
-                        "SELECTED"
-                    )
-                ) {
-                    console.log("YA HAY UNO PNDJ");
-                    bandera = false;
-                    break;
-                }
-            }
+    if (bandera) {
+        // Expandir la primera celda para cubrir el rango
+        celda.classList.add("bg-slate-500", "SELECTED");
+        celda.classList.add(`row-span-${duracionFinal}`);
+
+        // Eliminar las celdas que se "cubrieron" con la expansión
+        for (let i = 1; i < duracionFinal; i++) {
+            celda.parentNode.removeChild(CeldasSeleccionadas[indiceCelda + 1]);
         }
-
-        if (bandera) {
-            celda.classList.add("bg-slate-500");
-            celda.classList.add("SELECTED");
-
-            if (!Ultimo) {
-                celda.classList.add(`row-span-${Duracion}`);
-                for (let i = 1; i < Duracion; i++) {
-                    celda.parentNode.removeChild(
-                        CeldasSeleccionadas[indiceCelda + i]
-                    );
-                }
-            }
-        }
+    } else {
+        console.log("Algunas de las celdas están ocupadas.");
     }
 }
