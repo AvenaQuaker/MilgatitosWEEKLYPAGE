@@ -19,6 +19,10 @@
     }
 }
 
+body {
+    background-image: url(./Resources/FBSec2.png);
+}
+
 tr {
     background: #8884;
     border-radius: 0.5rem;

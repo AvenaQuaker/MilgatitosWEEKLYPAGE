@@ -2,6 +2,10 @@
 
 @import url("https://fonts.cdnfonts.com/css/super-onigiri");
 
+body {
+  background-image: url(./Resources/FBSec2.png);
+}
+
 tr {
   background: #8884;
   border-radius: 0.5rem;
@@ -1020,10 +1024,6 @@ video {
 
 .bg-\[url\(\'\.\/Resources\/FBsec2\.png\'\)\]{
   background-image: url('./Resources/FBsec2.png');
-}
-
-.bg-\[url\(\'\/Resources\/FBsec2\.png\'\)\]{
-  background-image: url('/Resources/FBsec2.png');
 }
 
 .bg-cover{
