@@ -9,8 +9,8 @@ let offsetX = 0,
     offsetY = 0;
 
 celdas.forEach((celda) => {
-    celda.addEventListener("click", (e) => {
-        ActivarForma(celda);
+    celda.addEventListener("click", () => {
+        if (!celda.classList.contains("SELECTED")) ActivarForma(celda);
     });
 });
 
@@ -113,6 +113,16 @@ function obtenerRecrusos(Tipo) {
             Recursos.Fondo = "./Resources/AnimeBG.png";
             Recursos.Logo = "./Resources/AnimeLogo.png";
             Recursos.Video = "anime_video.mp4";
+            break;
+        case "Hearthstone":
+            Recursos.Fondo = "./Resources/HearthstoneBG.png";
+            Recursos.Logo = "./Resources/HearthstoneLogo.png";
+            Recursos.Video = "hs_video.mp4";
+            break;
+        case "Minecraft":
+            Recursos.Fondo = "./Resources/MinecraftBG.jpg";
+            Recursos.Logo = "./Resources/MinecraftLogo.png";
+            Recursos.Video = "mc_video.mp4";
             break;
         default:
             console.log("Tipo de evento no válido.");
