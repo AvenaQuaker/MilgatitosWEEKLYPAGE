@@ -1022,6 +1022,10 @@ video {
   background-image: url('./Resources/FBsec2.png');
 }
 
+.bg-\[url\(\'\/Resources\/FBsec2\.png\'\)\]{
+  background-image: url('/Resources/FBsec2.png');
+}
+
 .bg-cover{
   background-size: cover;
 }
