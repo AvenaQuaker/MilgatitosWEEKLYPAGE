@@ -78,9 +78,18 @@ function ProgramarEvento(celda, objeto) {
         celda.style.gridRow = `span ${duracionFinal}`;
 
         let imagenSuper = document.createElement("img");
+        let Asunto = document.createElement("h1");
+        let Mensaje = document.createElement("h2");
         imagenSuper.src = Recursos.Logo;
+        Asunto.textContent = Tipo;
+        Mensaje.textContent = objeto.Mensaje;
         imagenSuper.classList.add("imgSuper");
         celda.append(imagenSuper);
+
+        Asunto.classList.add("Asunto");
+        Mensaje.classList.add("Mensaje");
+        celda.append(Asunto);
+        celda.append(Mensaje);
 
         // Eliminar las celdas que se "cubrieron" con la expansión
         for (let i = 1; i < duracionFinal; i++) {
@@ -125,35 +134,29 @@ function obtenerRecrusos(Tipo) {
     let Recursos = {
         Fondo: "",
         Logo: "",
-        Video: "",
     };
 
     switch (Tipo) {
         case "HOTS":
             Recursos.Fondo = HotsFondos[ObtenerIndice(HotsFondos)];
             Recursos.Logo = "./Resources/HotsLogo.png";
-            Recursos.Video = "hots_video.mp4";
             break;
         case "IRL":
             Recursos.Fondo = IRLFondos[ObtenerIndice(IRLFondos)];
             Recursos.Logo = "./Resources/IRLLogo.png";
-            Recursos.Video = "irl_video.mp4";
             break;
         case "Anime":
             Recursos.Fondo = AnimeFondos[ObtenerIndice(AnimeFondos)];
             Recursos.Logo = "./Resources/AnimeLogo.png";
-            Recursos.Video = "anime_video.mp4";
             break;
         case "Hearthstone":
             Recursos.Fondo =
                 HearthstoneFondos[ObtenerIndice(HearthstoneFondos)];
             Recursos.Logo = "./Resources/HearthstoneLogo.png";
-            Recursos.Video = "hs_video.mp4";
             break;
         case "Minecraft":
             Recursos.Fondo = MinecraftFondos[ObtenerIndice(MinecraftFondos)];
             Recursos.Logo = "./Resources/MinecraftLogo.png";
-            Recursos.Video = "mc_video.mp4";
             break;
         default:
             console.log("Tipo de evento no válido.");

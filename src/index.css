@@ -3,7 +3,7 @@
 
 @layer components {
     .hora {
-        @apply py-4 font-fredoka font-bold bg-gradient-to-r from-lime-500 to-green-700 rounded-md;
+        @apply max-md:py-4 py-6 font-fredoka font-bold bg-gradient-to-r from-lime-500 to-green-700 rounded-md;
     }
 
     .dia {
@@ -11,7 +11,7 @@
     }
 
     .celda {
-        @apply w-full h-full bg-gray-300 rounded-md transition-all hover:bg-gray-400;
+        @apply text-white w-full h-full bg-gray-300 rounded-md transition-all hover:bg-gray-400;
     }
 
     .hoy {
@@ -100,6 +100,25 @@ tbody > tr:nth-child(7) {
     width: 50%;
     height: auto;
     animation: girar 5s infinite;
+}
+
+.Asunto {
+    position: absolute;
+    z-index: 1;
+    margin: auto;
+    font-size: 1.2rem;
+    height: auto;
+    top: 10%;
+    font-family: "Super Onigiri", sans-serif;
+}
+
+.Mensaje {
+    position: absolute;
+    z-index: 1;
+    margin: auto;
+    height: auto;
+    bottom: 10%;
+    font-weight: 600;
 }
 
 @keyframes girar {

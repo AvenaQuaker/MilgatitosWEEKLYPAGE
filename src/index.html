@@ -8,20 +8,21 @@
         <link rel="stylesheet" href="indexTW.css" />
     </head>
     <body
-        class="flex flex-wrap text-base gap-4 m-auto max-w-7xl p-4 font-fredoka bg-fixed bg-cover justify-center h-max">
+        class="flex flex-wrap text-base gap-4 p-4 font-fredoka bg-fixed bg-cover justify-center h-max">
         <div class="flex flex-wrap gap-4 w-full">
             <div
-                class="flex-col flex flex-grow-0 justify-center relative text-center w-[20%] aspect-[1] md:aspect-[unset] md:bg-gray-300 md:w-full md:py-5">
-                <h2 class="text-3xl text-green-700 font-onigiri font-extrabold">
-                    HOLA SOY MILGA-TITOS
+                class="m-auto flex-col flex flex-grow-0 justify-center relative rounded-md text-center w-[20%] aspect-[1] md:aspect-[unset] md:bg-slate-200 md:w-4/5 md:py-5">
+                <h2
+                    class="max-md:text-xl text-3xl text-green-700 font-onigiri font-extrabold">
+                    HOLA SOY MILLGATITOS
                 </h2>
                 <p class="text-xl font-bold m-0 opacity-50">
-                    TOdu == MI CIRILO 🌞
+                    TOdu = MI CIRILO 🌞
                 </p>
             </div>
 
-            <div class="bg-transparent order-[0] p-0 w-3/4 md:w-full">
-                <h2 class="m-0 mt-6 mb-3 text-lg text-center font-bold">
+            <div class="bg-transparent order-[0] p-0 w-3/4 m-auto">
+                <h2 class="m-0 mt-6 mb-3 text-xl text-center font-bold">
                     Eventos del Dia de Hoy
                 </h2>
                 <table class="w-full border-inherit border-collapse">
@@ -58,16 +59,17 @@
                 </table>
             </div>
 
-            <h2 class="text-lg mb-2 w-full text-center font-bold">
-                Horario Semanal
+            <h2 class="text-xl mb-2 w-full text-center font-bold">
+                Horario Semanal MILLGATITOS
             </h2>
 
-            <section class="bg-slate-100 flex flex-col overflow-auto w-full">
+            <section
+                class="m-auto bg-slate-100 flex flex-col overflow-auto w-[90%]">
                 <main
-                    class="flex-grow text-center grid grid-cols-[0.5fr_4fr] grid-rows-[0.5fr_10fr] gap-2 w-full xl:w-full">
+                    class="flex-grow text-center grid grid-cols-[0.4fr_4fr] grid-rows-[0.5fr_10fr] gap-2 w-full xl:w-full">
                     <!-- Celda 1, Columna 1, Fila 1 -->
                     <div class="p-4 font-onigiri bg-lime-700 rounded-md">
-                        Dia/hora
+                        Hora
                     </div>
 
                     <!-- Celda 2, Columna 2, Fila 1 -->
@@ -224,6 +226,10 @@
                     </main>
                 </main>
             </section>
+
+            <h2 class="text-xl font-onigiri mb-2 w-full text-center font-bold">
+                NO Vender NI Alquilar, SOLO PARA FANS
+            </h2>
         </div>
         <form
             id="eventador"
@@ -261,6 +267,13 @@
                 <option value="7">7 Horas</option>
                 <option value="8">8 Horas</option>
             </select>
+
+            <label for="Mensaje">Mensaje</label>
+            <input
+                class="rounded-md text-center bg-slate-200 p-2"
+                type="text"
+                name="Mensaje"
+                id="msg" />
 
             <button
                 id="btnProgramar"
@@ -314,6 +327,7 @@
                 >
             </button>
         </figure>
+
         <script src="index.js"></script>
     </body>
 </html>
