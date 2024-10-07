@@ -92,6 +92,36 @@ function ProgramarEvento(celda, objeto) {
 }
 
 function obtenerRecrusos(Tipo) {
+    const HotsFondos = [
+        "./Resources/HotsBG.jpg",
+        "./Resources/HotsBG2.jpg",
+        "./Resources/HotsBG3.jpg",
+    ];
+
+    const IRLFondos = [
+        "./Resources/IRLBG.jpg",
+        "./Resources/IRLBG2.png",
+        "./Resources/IRLBG3.jpg",
+    ];
+
+    const AnimeFondos = [
+        "./Resources/AnimeBG.png",
+        "./Resources/AnimeBG2.png",
+        "./Resources/AnimeBG3.png",
+    ];
+
+    const HearthstoneFondos = [
+        "./Resources/HearthstoneBG.png",
+        "./Resources/HearthstoneBG2.png",
+        "./Resources/HearthstoneBG3.png",
+    ];
+
+    const MinecraftFondos = [
+        "./Resources/MinecraftBG.png",
+        "./Resources/MinecraftBG2.png",
+        "./Resources/MinecraftBG3.png",
+    ];
+
     let Recursos = {
         Fondo: "",
         Logo: "",
@@ -100,27 +130,28 @@ function obtenerRecrusos(Tipo) {
 
     switch (Tipo) {
         case "HOTS":
-            Recursos.Fondo = "./Resources/HotsBG.jpg";
+            Recursos.Fondo = HotsFondos[ObtenerIndice(HotsFondos)];
             Recursos.Logo = "./Resources/HotsLogo.png";
             Recursos.Video = "hots_video.mp4";
             break;
         case "IRL":
-            Recursos.Fondo = "./Resources/IRLBG.jpg";
+            Recursos.Fondo = IRLFondos[ObtenerIndice(IRLFondos)];
             Recursos.Logo = "./Resources/IRLLogo.png";
             Recursos.Video = "irl_video.mp4";
             break;
         case "Anime":
-            Recursos.Fondo = "./Resources/AnimeBG.png";
+            Recursos.Fondo = AnimeFondos[ObtenerIndice(AnimeFondos)];
             Recursos.Logo = "./Resources/AnimeLogo.png";
             Recursos.Video = "anime_video.mp4";
             break;
         case "Hearthstone":
-            Recursos.Fondo = "./Resources/HearthstoneBG.png";
+            Recursos.Fondo =
+                HearthstoneFondos[ObtenerIndice(HearthstoneFondos)];
             Recursos.Logo = "./Resources/HearthstoneLogo.png";
             Recursos.Video = "hs_video.mp4";
             break;
         case "Minecraft":
-            Recursos.Fondo = "./Resources/MinecraftBG.jpg";
+            Recursos.Fondo = MinecraftFondos[ObtenerIndice(MinecraftFondos)];
             Recursos.Logo = "./Resources/MinecraftLogo.png";
             Recursos.Video = "mc_video.mp4";
             break;
@@ -130,4 +161,9 @@ function obtenerRecrusos(Tipo) {
     }
 
     return Recursos;
+}
+
+function ObtenerIndice(Arreglo) {
+    const indice = Math.floor(Math.random() * Arreglo.length);
+    return indice;
 }
