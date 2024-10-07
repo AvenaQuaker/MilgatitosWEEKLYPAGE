@@ -1,16 +1,23 @@
 let celdas = document.querySelectorAll(".celda");
 let eventador = document.getElementById("eventador");
-let btncerrar = document.getElementById("btncerrar");
-let btnProgramar = document.getElementById("btnProgramar");
+let Cerrar = document.querySelectorAll(".btnCerrar");
+let Cancelar = document.getElementById("Cancelar");
 let celdaActual;
 let Duracion;
-let Arrastrando = false;
-let offsetX = 0,
-    offsetY = 0;
 
 celdas.forEach((celda) => {
     celda.addEventListener("click", () => {
-        if (!celda.classList.contains("SELECTED")) ActivarForma(celda);
+        let Seleccionado = false;
+        if (celda.classList.contains("SELECTED")) Seleccionado = true;
+
+        ActivarForma(celda, Seleccionado);
+    });
+});
+
+Cerrar.forEach((cerrar) => {
+    cerrar.addEventListener("click", () => {
+        let Padre = cerrar.parentNode;
+        CerrarElemento(Padre);
     });
 });
 
@@ -19,17 +26,11 @@ document.addEventListener("click", (e) => {
         !e.target.classList.contains("celda") &&
         !eventador.contains(e.target)
     ) {
-        eventador.classList.add("opacity-0");
-        eventador.classList.add("pointer-events-none");
+        CerrarElemento(eventador);
     }
 });
 
-btncerrar.addEventListener("click", () => {
-    eventador.classList.add("opacity-0");
-    eventador.classList.add("pointer-events-none");
-});
-
-btnProgramar.addEventListener("click", () => {
+eventador.querySelector("button").addEventListener("click", () => {
     eventador.classList.add("opacity-0");
     eventador.classList.add("pointer-events-none");
 
@@ -42,9 +43,31 @@ btnProgramar.addEventListener("click", () => {
     ProgramarEvento(celdaActual, objeto);
 });
 
-function ActivarForma(celda) {
-    eventador.classList.remove("opacity-0");
-    eventador.classList.remove("pointer-events-none");
+Cancelar.querySelector("button").addEventListener("click", () => {
+    CerrarElemento(Cancelar);
+
+    contador = parseInt(celdaActual.querySelector("p").textContent);
+    while (contador > 1) {
+        let caja = document.createElement("div");
+        caja.classList.add("celda");
+        celdaActual.parentNode.append(caja);
+        contador -= 1;
+    }
+
+    celdaActual.classList.remove("SELECTED");
+    celdaActual.style = "";
+    celdaActual.classList = "celda";
+    celdaActual.innerHTML = "";
+});
+
+function ActivarForma(celda, Seleccionado) {
+    if (!Seleccionado) {
+        eventador.classList.remove("opacity-0");
+        eventador.classList.remove("pointer-events-none");
+    } else {
+        Cancelar.classList.remove("opacity-0");
+        Cancelar.classList.remove("pointer-events-none");
+    }
 
     celdaActual = celda;
 }
@@ -80,14 +103,20 @@ function ProgramarEvento(celda, objeto) {
         let imagenSuper = document.createElement("img");
         let Asunto = document.createElement("h1");
         let Mensaje = document.createElement("h2");
+        let horas = document.createElement("p");
         imagenSuper.src = Recursos.Logo;
+
         Asunto.textContent = Tipo;
         Mensaje.textContent = objeto.Mensaje;
-        imagenSuper.classList.add("imgSuper");
-        celda.append(imagenSuper);
+        horas.textContent = `${duracionFinal}`;
 
+        imagenSuper.classList.add("imgSuper");
+        horas.classList.add("hidden");
         Asunto.classList.add("Asunto");
         Mensaje.classList.add("Mensaje");
+
+        celda.append(horas);
+        celda.append(imagenSuper);
         celda.append(Asunto);
         celda.append(Mensaje);
 
@@ -169,4 +198,9 @@ function obtenerRecrusos(Tipo) {
 function ObtenerIndice(Arreglo) {
     const indice = Math.floor(Math.random() * Arreglo.length);
     return indice;
+}
+
+function CerrarElemento(elemento) {
+    elemento.classList.add("opacity-0");
+    elemento.classList.add("pointer-events-none");
 }

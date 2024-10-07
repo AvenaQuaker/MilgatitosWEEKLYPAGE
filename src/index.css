@@ -17,6 +17,10 @@
     .hoy {
         @apply transition-all hover:scale-105 md:w-[30%] lg:h-[10em] lg:w-[30%];
     }
+
+    .DiaSemana {
+        @apply h-full grid grid-cols-1 gap-1;
+    }
 }
 
 body {
