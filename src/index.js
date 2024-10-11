@@ -322,7 +322,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const Dia = diasSemana[hoy.getDay()];
 
     $.ajax({
-        url: "http://localhost:1234/Cargar",
+        url: "https://milgatitosweeklypage.onrender.com/Cargar",
         method: "GET",
         success: function (response) {
             console.log("Recursos cargados correctamente:", response);
@@ -388,7 +388,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.getElementById("btnGuardar").addEventListener("click", () => {
     $.ajax({
-        url: "http://localhost:1234/Guardar",
+        url: "https://milgatitosweeklypage.onrender.com/Guardar",
         method: "POST",
         data: JSON.stringify(EventosProgramados),
         contentType: "application/json",
