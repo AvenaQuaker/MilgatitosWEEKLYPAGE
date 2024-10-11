@@ -14,6 +14,7 @@ app.use(
                 "http://localhost:1234",
                 "https://milgatitosweeklypage.onrender.com",
                 "https://avenaquaker.github.io",
+                "http://127.0.0.1:5500",
             ];
 
             if (ACCEPTED_ORIGINS.includes(origin)) {
