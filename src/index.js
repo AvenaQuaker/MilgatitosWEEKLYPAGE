@@ -226,7 +226,7 @@ function obtenerRecrusos(Tipo) {
             Recursos.GIF = "./Resources/Minecraft.gif";
             break;
         default:
-            Recursos.Fondo = "./Resources/VariadoBG.PNG"; // Aquí se debería seleccionar un fondo aleatorio
+            Recursos.Fondo = "./Resources/VariadoBG.png"; // Aquí se debería seleccionar un fondo aleatorio
             Recursos.GIF = "./Resources/Variado.gif"; // Aquí se debería seleccionar un GIF aleatorio
             break;
     }
