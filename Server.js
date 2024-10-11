@@ -5,13 +5,26 @@ import cors from "cors";
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(
+    cors({
+        origin: (origin, callback) => {
+            const ACCEPTED_ORIGINS = [
+                "http://localhost:5500",
+                "http://localhost:8080",
+                "http://localhost:1234",
+                "https://milgatitosweeklypage.onrender.com",
+            ];
+
+            if (ACCEPTED_ORIGINS.includes(origin)) {
+                callback(null, true);
+            } else {
+                callback(new Error("No permitido"), false);
+            }
+        },
+    })
+);
 
 const PORT = process.env.PORT ?? 1234;
-
-// app.get("/", (req, res) => {
-//     res.sendFile(path.join(process.cwd(), "src", "index.html"));
-// });
 
 app.post("/Guardar", (req, res) => {
     const eventos = req.body;
