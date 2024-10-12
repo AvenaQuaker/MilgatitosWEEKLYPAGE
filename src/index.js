@@ -322,14 +322,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const Dia = diasSemana[hoy.getDay()];
 
     $.ajax({
-        url: "https://milgatitosweeklypage.onrender.com/Cargar",
+        url: "https://api.jsonbin.io/v3/b/6709e7c0ad19ca34f8b6fd9b/latest",
         method: "GET",
+        headers: {
+            "X-Master-Key":
+                "$2a$10$VEuGsqK6LbSVlHXblkpfQOutAo4.UGmKGbL5i41xcrs1f2FBFJkQC",
+        },
         success: function (response) {
             console.log("Recursos cargados correctamente:", response);
+            let Recibidos = response.record.EventosProgramados;
             let horario = celdas[0].parentNode.parentNode;
 
             // Cargar los recursos en las celdas
-            response.forEach((recurso) => {
+            Recibidos.forEach((recurso) => {
                 let dia = Dias.indexOf(recurso.Dia);
                 let celda = horario.children[dia].children[recurso.indice];
 
@@ -388,17 +393,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.getElementById("btnGuardar").addEventListener("click", () => {
     $.ajax({
-        url: "https://milgatitosweeklypage.onrender.com/Guardar",
-        method: "POST",
-        data: JSON.stringify(EventosProgramados),
-        contentType: "application/json",
+        url: "https://api.jsonbin.io/v3/b/6709e7c0ad19ca34f8b6fd9b",
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+            "X-Master-Key":
+                "$2a$10$VEuGsqK6LbSVlHXblkpfQOutAo4.UGmKGbL5i41xcrs1f2FBFJkQC",
+        },
+        data: JSON.stringify({ EventosProgramados: EventosProgramados }), // Guardar los eventos programados
         success: function (response) {
-            console.log("Respuesta del servidor:", response); // Ver respuesta del servidor
+            console.log(
+                "Eventos guardados correctamente en JSONBin:",
+                response
+            );
             alert("Eventos guardados correctamente.");
         },
         error: function (xhr, status, error) {
-            console.error("Error al guardar los eventos:", error); // Manejo de errores
-            alert("Hubo un error al guardar los eventos.");
+            console.error("Error al guardar eventos:", error);
+            alert("Error al guardar eventos.");
         },
     });
 });
