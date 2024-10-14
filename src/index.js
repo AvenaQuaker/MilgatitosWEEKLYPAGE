@@ -198,6 +198,12 @@ function obtenerRecrusos(Tipo) {
         "./Resources/MinecraftBG3.png",
     ];
 
+    const CineFondos = [
+        "./Resources/CineBG.png",
+        "./Resources/CineBG2.png",
+        "./Resources/CineBG3.png",
+    ];
+
     let Recursos = {
         Fondo: "",
         GIF: "",
@@ -225,9 +231,13 @@ function obtenerRecrusos(Tipo) {
             Recursos.Fondo = MinecraftFondos[ObtenerIndice(MinecraftFondos)];
             Recursos.GIF = "./Resources/Minecraft.gif";
             break;
+        case "Cine":
+            Recursos.Fondo = CineFondos[ObtenerIndice(CineFondos)];
+            Recursos.GIF = "./Resources/Cine.gif";
+            break;
         default:
-            Recursos.Fondo = "./Resources/VariadoBG.png"; // Aquí se debería seleccionar un fondo aleatorio
-            Recursos.GIF = "./Resources/Variado.gif"; // Aquí se debería seleccionar un GIF aleatorio
+            Recursos.Fondo = "./Resources/VariadoBG.png";
+            Recursos.GIF = "./Resources/Variado.gif";
             break;
     }
 
@@ -257,6 +267,7 @@ function AnadirEvento(
 
     celda.classList.add("bg-cover", "SELECTED");
     celda.style.backgroundImage = `url('${Recursos.Fondo}')`;
+    celda.style.background;
     celda.style.gridRow = `span ${duracionFinal}`;
 
     let Asunto = document.createElement("h1");

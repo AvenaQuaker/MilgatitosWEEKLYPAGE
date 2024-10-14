@@ -3,7 +3,7 @@
 
 @layer components {
     .hora {
-        @apply max-md:py-4 py-6 font-fredoka font-bold bg-gradient-to-r from-lime-500 to-green-700 rounded-md;
+        @apply max-md:py-4 py-8 text-lg  font-fredoka font-extrabold bg-gradient-to-r from-lime-500 to-green-700 rounded-md;
     }
 
     .dia {

@@ -37,7 +37,7 @@
             </h2>
 
             <section
-                class="m-auto bg-slate-100 flex flex-col overflow-auto w-[90%]">
+                class="m-auto bg-slate-100 flex flex-col overflow-y-hidden overflow-auto w-[90%]">
                 <main
                     class="flex-grow text-center grid grid-cols-[0.4fr_4fr] grid-rows-[0.5fr_10fr] gap-2 w-full xl:w-full">
                     <!-- Celda 1, Columna 1, Fila 1 -->
@@ -58,9 +58,6 @@
 
                     <!-- Celda 3, Columna 1, Fila 2 -->
                     <section class="flex flex-col gap-1">
-                        <div class="hora">10:00 AM</div>
-                        <div class="hora">11:00 AM</div>
-                        <div class="hora">12:00 PM</div>
                         <div class="hora">1:00 PM</div>
                         <div class="hora">2:00 PM</div>
                         <div class="hora">3:00 PM</div>
@@ -90,31 +87,8 @@
                             <div class="celda"></div>
                             <div class="celda"></div>
                             <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
                         </section>
                         <section class="DiaSemana">
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                        </section>
-                        <section class="DiaSemana">
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
                             <div class="celda"></div>
                             <div class="celda"></div>
                             <div class="celda"></div>
@@ -141,6 +115,17 @@
                             <div class="celda"></div>
                             <div class="celda"></div>
                             <div class="celda"></div>
+                        </section>
+                        <section class="DiaSemana">
+                            <div class="celda"></div>
+                            <div class="celda"></div>
+                            <div class="celda"></div>
+                            <div class="celda"></div>
+                            <div class="celda"></div>
+                            <div class="celda"></div>
+                            <div class="celda"></div>
+                            <div class="celda"></div>
+                            <div class="celda"></div>
                             <div class="celda"></div>
                             <div class="celda"></div>
                             <div class="celda"></div>
@@ -158,9 +143,6 @@
                             <div class="celda"></div>
                             <div class="celda"></div>
                             <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
                         </section>
                         <section class="DiaSemana">
                             <div class="celda"></div>
@@ -175,14 +157,8 @@
                             <div class="celda"></div>
                             <div class="celda"></div>
                             <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
                         </section>
                         <section class="DiaSemana">
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
                             <div class="celda"></div>
                             <div class="celda"></div>
                             <div class="celda"></div>
@@ -206,7 +182,7 @@
         </div>
         <aside
             id="eventador"
-            class="z-10 right-3 bottom-32 md:bottom-10 opacity-0 pointer-events-none flex flex-col fixed w-max h-max p-5 px-16 bg-slate-50 shadow-xl rounded-md gap-2 transition-all duration-300">
+            class="bg-contain z-10 right-3 bottom-32 md:bottom-10 opacity-0 pointer-events-none flex flex-col fixed w-max h-max p-5 px-16 bg-slate-50 shadow-xl rounded-md gap-2 transition-all duration-300">
             <h1 class="font-onigiri text-center">
                 Organizar nuevo <br />Evento
             </h1>
@@ -225,6 +201,7 @@
                 <option value="Anime">Anime</option>
                 <option value="Hearthstone">Hearthstone</option>
                 <option value="Minecraft">Minecraft</option>
+                <option value="Cine">Cine Millonario</option>
             </select>
             <input
                 id="eventoVariado"
@@ -325,7 +302,7 @@
                     class="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full bg-green-700 rounded-md group-hover:translate-x-0"></span>
                 <span
                     class="text-center font-onigiri relative w-full text-white transition-colors duration-200 ease-in-out group-hover:text-white"
-                    >SE CANCELA</span
+                    >SI CANCELA</span
                 >
             </button>
             <div
