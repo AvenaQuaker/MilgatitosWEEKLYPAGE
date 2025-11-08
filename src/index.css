@@ -65,6 +65,7 @@ tbody > tr {
 
 .SELECTED:hover {
     transform: scale(1.1);
+    overflow: hidden;
 }
 
 .imgSuper {
@@ -92,6 +93,11 @@ tbody > tr {
     height: auto;
     bottom: 10%;
     font-weight: 600;
+}
+
+.celda{
+    background-position: center;
+    overflow: hidden;
 }
 
 @keyframes girar {

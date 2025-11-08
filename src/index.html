@@ -14,10 +14,10 @@
                 class="m-auto flex-col flex flex-grow-0 justify-center relative rounded-md text-center w-[20%] aspect-[1] md:aspect-[unset] md:bg-slate-200 md:w-4/5 md:py-5">
                 <h2
                     class="max-md:text-xl text-3xl text-green-700 font-onigiri font-extrabold">
-                    HOLA SOY MILLGATITOS
+                    LA MAFIA DE AZEROTH
                 </h2>
                 <p class="text-xl font-bold m-0 opacity-50">
-                    TOdu = MI CIRILO 🌞
+                    HORARIO DE RAID
                 </p>
             </div>
 
@@ -33,13 +33,15 @@
             </div>
 
             <h2 class="text-xl mb-2 w-full text-center font-bold">
-                Horario Semanal MILLGATITOS
+                Horario Semanal para RAIDS ( HORA PERU UTC-5 )
             </h2>
 
             <section
                 class="m-auto bg-slate-100 flex flex-col overflow-y-hidden overflow-auto w-[90%]">
                 <main
-                    class="flex-grow text-center grid grid-cols-[0.4fr_4fr] grid-rows-[0.5fr_10fr] gap-2 w-full xl:w-full">
+                    class="flex-grow text-center grid grid-cols-[0.4fr_4fr] grid-rows-[0.5fr_10fr] gap-2 w-full xl:w-full"
+                    style="overflow: hidden;">
+                    
                     <!-- Celda 1, Columna 1, Fila 1 -->
                     <div class="p-4 font-onigiri bg-lime-700 rounded-md">
                         Hora
@@ -58,11 +60,6 @@
 
                     <!-- Celda 3, Columna 1, Fila 2 -->
                     <section class="flex flex-col gap-1">
-                        <div class="hora">1:00 PM</div>
-                        <div class="hora">2:00 PM</div>
-                        <div class="hora">3:00 PM</div>
-                        <div class="hora">4:00 PM</div>
-                        <div class="hora">5:00 PM</div>
                         <div class="hora">6:00 PM</div>
                         <div class="hora">7:00 PM</div>
                         <div class="hora">8:00 PM</div>
@@ -82,18 +79,8 @@
                             <div class="celda"></div>
                             <div class="celda"></div>
                             <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
                         </section>
                         <section class="DiaSemana">
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
                             <div class="celda"></div>
                             <div class="celda"></div>
                             <div class="celda"></div>
@@ -110,18 +97,8 @@
                             <div class="celda"></div>
                             <div class="celda"></div>
                             <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
                         </section>
                         <section class="DiaSemana">
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
                             <div class="celda"></div>
                             <div class="celda"></div>
                             <div class="celda"></div>
@@ -138,11 +115,6 @@
                             <div class="celda"></div>
                             <div class="celda"></div>
                             <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
                         </section>
                         <section class="DiaSemana">
                             <div class="celda"></div>
@@ -152,18 +124,8 @@
                             <div class="celda"></div>
                             <div class="celda"></div>
                             <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
                         </section>
                         <section class="DiaSemana">
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
-                            <div class="celda"></div>
                             <div class="celda"></div>
                             <div class="celda"></div>
                             <div class="celda"></div>
@@ -196,12 +158,15 @@
                 name="Tipo"
                 id="tipoEvento"
                 class="rounded-md text-center bg-slate-200 p-2">
-                <option value="HOTS">Heroes of the storm</option>
-                <option value="IRL">IRL</option>
-                <option value="Anime">Anime</option>
-                <option value="Hearthstone">Hearthstone</option>
-                <option value="Minecraft">Minecraft</option>
-                <option value="Cine">Cine Millonario</option>
+                <option value="ONIXIA">Onixia</option>
+                <option value="MC">Molten Core</option>
+                <option value="KARA">Lower Karazan Halls</option>
+                <option value="BWL">Blackwing Lair</option>
+                <option value="ZG">Zulgurub</option>
+                <option value="SE">Emerald Sanctum</option>
+                <option value="AQ20">Ruins of AhnQiraj</option>
+                <option value="AQ40">Temple of AhnQiraj</option>
+                <option value="Random">Variado</option>
             </select>
             <input
                 id="eventoVariado"
@@ -217,10 +182,6 @@
                 <option value="2">2 Horas</option>
                 <option value="3">3 Horas</option>
                 <option value="4">4 Horas</option>
-                <option value="5">5 Horas</option>
-                <option value="6">6 Horas</option>
-                <option value="7">7 Horas</option>
-                <option value="8">8 Horas</option>
             </select>
 
             <label for="Mensaje">Mensaje</label>

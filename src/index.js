@@ -52,7 +52,7 @@ eventador.querySelector("button").addEventListener("click", (e) => {
     let variado = document.getElementById("eventoVariado").value;
 
     let objeto;
-    if (!variado == "") {
+    if (variado == "") {
         objeto = {
             Tipo: variado,
             Duracion: duracion,
@@ -168,76 +168,47 @@ function ActivarForma(celda, Seleccionado) {
 }
 
 function obtenerRecrusos(Tipo) {
-    const HotsFondos = [
-        "./Resources/HotsBG.jpg",
-        "./Resources/HotsBG2.jpg",
-        "./Resources/HotsBG3.jpg",
-    ];
-
-    const IRLFondos = [
-        "./Resources/IRLBG.jpg",
-        "./Resources/IRLBG2.png",
-        "./Resources/IRLBG3.jpg",
-    ];
-
-    const AnimeFondos = [
-        "./Resources/AnimeBG.png",
-        "./Resources/AnimeBG2.png",
-        "./Resources/AnimeBG3.png",
-    ];
-
-    const HearthstoneFondos = [
-        "./Resources/HearthstoneBG.png",
-        "./Resources/HearthstoneBG2.png",
-        "./Resources/HearthstoneBG3.png",
-    ];
-
-    const MinecraftFondos = [
-        "./Resources/MinecraftBG.png",
-        "./Resources/MinecraftBG2.png",
-        "./Resources/MinecraftBG3.png",
-    ];
-
-    const CineFondos = [
-        "./Resources/CineBG.png",
-        "./Resources/CineBG2.png",
-        "./Resources/CineBG3.png",
-    ];
-
     let Recursos = {
         Fondo: "",
         GIF: "",
     };
 
     switch (Tipo) {
-        case "HOTS":
-            Recursos.Fondo = HotsFondos[ObtenerIndice(HotsFondos)];
-            Recursos.GIF = "./Resources/Hots.gif";
+        case "ONIXIA":
+            Recursos.Fondo = "./Resources/Onixia.webp"
+            Recursos.GIF = "./Resources/Onixia.gif";
             break;
-        case "IRL":
-            Recursos.Fondo = IRLFondos[ObtenerIndice(IRLFondos)];
-            Recursos.GIF = "./Resources/IRL.gif";
+        case "MC":
+            Recursos.Fondo = "./Resources/MC.jpg"
+            Recursos.GIF = "./Resources/MC.gif";
             break;
-        case "Anime":
-            Recursos.Fondo = AnimeFondos[ObtenerIndice(AnimeFondos)];
-            Recursos.GIF = "./Resources/Anime.gif";
+        case "KARA":
+            Recursos.Fondo = "./Resources/Kara.jpg"
+            Recursos.GIF = "./Resources/Kara.gif";
             break;
-        case "Hearthstone":
-            Recursos.Fondo =
-                HearthstoneFondos[ObtenerIndice(HearthstoneFondos)];
-            Recursos.GIF = "./Resources/HS.gif";
+        case "BWL":
+            Recursos.Fondo = "./Resources/BWL.webp"
+            Recursos.GIF = "./Resources/BWL.gif";
             break;
-        case "Minecraft":
-            Recursos.Fondo = MinecraftFondos[ObtenerIndice(MinecraftFondos)];
-            Recursos.GIF = "./Resources/Minecraft.gif";
+        case "ZG":
+            Recursos.Fondo = "./Resources/ZG.jpg"
+            Recursos.GIF = "./Resources/ZG.gif";
             break;
-        case "Cine":
-            Recursos.Fondo = CineFondos[ObtenerIndice(CineFondos)];
-            Recursos.GIF = "./Resources/Cine.gif";
+        case "SE":
+            Recursos.Fondo = "./Resources/SE.JPG"
+            Recursos.GIF = "./Resources/SE.gif";
+            break;
+        case "AQ20":
+            Recursos.Fondo = "./Resources/AQ20.JPG"
+            Recursos.GIF = "./Resources/AQ20.PNG";
+            break;
+        case "AQ40":
+            Recursos.Fondo = "./Resources/AQ40.JPG"
+            Recursos.GIF = "./Resources/AQ401.JPG";
             break;
         default:
             Recursos.Fondo = "./Resources/VariadoBG.png";
-            Recursos.GIF = "./Resources/Variado.gif";
+            Recursos.GIF = "./Resources/Webada.gif";
             break;
     }
 
